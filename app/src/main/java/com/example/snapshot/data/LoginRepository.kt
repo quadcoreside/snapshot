@@ -1,5 +1,7 @@
 package com.example.snapshot.data
 
+import android.widget.Toast
+import com.example.snapshot.RetrofitInstance
 import com.example.snapshot.data.model.LoggedInUser
 
 /**
@@ -36,6 +38,34 @@ class LoginRepository(val dataSource: LoginDataSource) {
         }
 
         return result
+    }
+
+    private fun signup(date: String, email: String, name: String,
+                       surname: String, password: String){
+        val retIn = RetrofitInstance.getRetrofitInstance().create(ApiInterface::class.java)
+        val registerInfo = UserBody(date,email,name, surname,password)
+
+        retIn.registerUser(registerInfo).enqueue(object :
+                Callback<ResponseBody> {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                Toast.makeText(
+                        this@MainActivity,
+                        t.message,
+                        Toast.LENGTH_SHORT
+                ).show()
+            }
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.code() == 201) {
+                    Toast.makeText(this@MainActivity, "Registration success!", Toast.LENGTH_SHORT)
+                            .show()
+
+                }
+                else{
+                    Toast.makeText(this@MainActivity, "Registration failed!", Toast.LENGTH_SHORT)
+                            .show()
+                }
+            }
+        })
     }
 
     private fun setLoggedInUser(loggedInUser: LoggedInUser) {

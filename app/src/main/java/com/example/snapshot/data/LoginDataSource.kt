@@ -1,12 +1,18 @@
 package com.example.snapshot.data
 
+import android.content.Context
 import com.example.snapshot.data.model.LoggedInUser
 import java.io.IOException
 
 /**
  * Class that handles authentication w/ login credentials and retrieves user information.
  */
-class LoginDataSource {
+class LoginDataSource(private val context: Context) {
+
+    interface LoginCallBack {
+        fun onSuccess();
+        fun onError(message: String?)
+    }
 
     fun login(username: String, password: String): Result<LoggedInUser> {
         try {
