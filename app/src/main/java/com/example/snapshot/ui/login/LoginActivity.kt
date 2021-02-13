@@ -92,7 +92,9 @@ class LoginActivity : AppCompatActivity() {
 
             login.setOnClickListener {
                 loading.visibility = View.VISIBLE
-                loginViewModel.login(username.text.toString(), password.text.toString())
+                loginViewModel.login(username.text.toString().trim(), password.text.toString().trim())
+
+                RetrofitClient.instance.userLogin
             }
         }
     }

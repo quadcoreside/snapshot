@@ -1,4 +1,4 @@
-package com.example.snapshot.data.model
+package com.example.snapshot.models
 
 data class UserBody(val date_of_birth: String,
                     val email: String,

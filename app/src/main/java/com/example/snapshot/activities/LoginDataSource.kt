@@ -1,7 +1,7 @@
-package com.example.snapshot.data
+package com.example.snapshot.activities
 
 import android.content.Context
-import com.example.snapshot.data.model.LoggedInUser
+import com.example.snapshot.models.LoggedInUser
 import java.io.IOException
 
 /**

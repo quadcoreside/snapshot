@@ -1,4 +1,4 @@
-package com.example.snapshot.data
+package com.example.snapshot.activities
 
 /**
  * A generic class that holds a value with its loading status.

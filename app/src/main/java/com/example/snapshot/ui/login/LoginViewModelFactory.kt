@@ -2,8 +2,7 @@ package com.example.snapshot.ui.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.snapshot.data.LoginDataSource
-import com.example.snapshot.data.LoginRepository
+import com.example.snapshot.activities.LoginDataSource
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

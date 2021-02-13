@@ -1,7 +1,7 @@
 package com.example.snapshot
 
-import com.example.snapshot.data.model.SignInBody
-import com.example.snapshot.data.model.UserBody
+import com.example.snapshot.models.SignInBody
+import com.example.snapshot.models.UserBody
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor

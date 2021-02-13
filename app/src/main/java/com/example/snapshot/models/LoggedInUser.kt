@@ -1,4 +1,4 @@
-package com.example.snapshot.data.model
+package com.example.snapshot.models
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository
